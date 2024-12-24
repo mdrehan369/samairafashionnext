@@ -1,7 +1,9 @@
+"use client"
+
 import { faCartShopping, faIndianRupee, faIndianRupeeSign, faMinus, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Button from './Button';
 import { Hourglass } from 'react-loader-spinner';
 import { useAppSelector } from '@/lib/hooks';
@@ -12,7 +14,6 @@ function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
     const [quantity, setQuantity] = useState(1);
     const { isIndia, dirham_to_rupees } = useAppSelector(state => state.auth.location);
     const [color, setColor] = useState(product.color);
-    // const [allVariants, setAllVariants] = useState([]);
     const status = useAppSelector(state => state.auth.status);
     const [discount, setDiscount] = useState(0);
     const navigate = useNavigate();

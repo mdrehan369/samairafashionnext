@@ -13,7 +13,7 @@ function Container({
     ...props
 }: Props) {
   return (
-    <div className={twMerge(`w-[100vw] h-auto relative min-h-[90vh] dark:bg-primary-color dark:text-white`, className)} {...props}>
+    <div className={twMerge(`w-[100vw] h-auto relative min-h-[90vh] dark:bg-primary-color dark:text-white text-black`, className)} {...props}>
       {/* <img src={bg} alt="bg" className='absolute top-' /> */}
         {children}
     </div>

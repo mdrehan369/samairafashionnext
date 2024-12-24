@@ -1,18 +1,20 @@
-import React, { useEffect, useRef } from 'react'
-import pic1 from "../assets/banner1.webp"
-import pic2 from "../assets/banner2.webp"
-import pic3 from "../assets/banner3.webp"
-import pic4 from "../assets/banner5.png"
-import pic5 from "../assets/banner5.webp"
-import pic2ph from "../assets/pic2ph.webp"
-import pic1ph from "../assets/pic1ph.webp"
+"use client"
+
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 function Carousel({ ...props }) {
     
     let counter = useRef(0);
+    const [windowSt, setWindow] = useState<any>(null);
 
     useEffect(() => {
+
+        if (typeof window !== 'undefined') {
+            // detect window screen width function
+            setWindow(window);
+        }
+
         const slider = document.getElementById('slider');
         const bar = document.getElementById('bar');
 
@@ -46,19 +48,17 @@ function Carousel({ ...props }) {
 
             <div {...props} className='w-[100vw] h-[90vh] animate-animate-appear cursor-pointer relative overflow-hidden m-auto'>
                 <div className='w-full h-full absolute top-0 left-0 transition duration-500 scroll-smooth opacity-0' id='slider'>
-                    <Image fill={true} alt='' src={window.screen.width > 500 ? pic3 : pic1ph} className='absolute left-0 top-0 w-full md:h-full h-[90%] transition-opacity duration-500 opacity-100  md:object-cover object-cover' />
-                    <Image fill={true} alt='' src={window.screen.width > 500 ? pic1 : pic2ph} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full md:object-cover h-[90%]' />
-                    <Image fill={true} alt='' src={window.screen.width > 500 ? pic2 : pic1ph} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' />
-                    <Image fill={true} alt='' src={window.screen.width > 500 ? pic5 : pic1ph} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' />
-                    <Image fill={true} alt='' src={window.screen.width > 500 ? pic4 : pic2ph} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' onLoad={(e) => e.currentTarget.parentElement?.classList.replace('opacity-0', 'opacity-100')} />
-                    {/* <img src={window.screen.width > 500 ? pic5 : pic1ph} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' /> */}
+                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner3.webp" : "/pic1ph.webp"} className='absolute left-0 top-0 w-full md:h-full h-[90%] transition-opacity duration-500 opacity-100  md:object-cover object-cover' />
+                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner1.webp" : "/pic2ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full md:object-cover h-[90%]' />
+                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner2.webp" : "/pic1ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' />
+                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner5.webp" : "/pic1ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' />
+                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner5.png" : "/pic2ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' onLoad={(e) => e.currentTarget.parentElement?.classList.replace('opacity-0', 'opacity-100')} />
                     <div id='bar' className='absolute flex items-center shadow-xl border-[1px] border-black justify-center gap-2 rounded-md bg-black opacity-40 px-2 md:bottom-10 bottom-56 left-[50%] translate-x-[-50%] p-1'>
                         <div className='rounded-full size-2 border-[1px] border-white bg-white scale-125'></div>
                         <div className='rounded-full size-2 border-[1px] border-white'></div>
                         <div className='rounded-full size-2 border-[1px] border-white'></div>
                         <div className='rounded-full size-2 border-[1px] border-white'></div>
                         <div className='rounded-full size-2 border-[1px] border-white'></div>
-                        {/* <div className='rounded-full size-2 border-[1px] border-white'></div> */}
                     </div>
                 </div>
             </div>
