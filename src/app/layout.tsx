@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Lato, Fjalla_One, Poppins } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./storeProvider";
 import { Footer, Header } from "@/components";
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import AuthLayout from "@/components/AuthLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,14 +49,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js"
+        ></script>
+        {/* <script type="text/javascript" src="/js/fbInit.js"></script> */}
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${flajallaOne.variable} ${lato.variable} antialiased bg-white dark:bg-[#020617] font-poppins`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${flajallaOne.variable} ${lato.variable} antialiased bg-white dark:bg-[#020617] font-poppins `}
       >
-        <StoreProvider>
-          <Header />
-          {children}
-        </StoreProvider>
-        <Footer />
+        <GoogleOAuthProvider clientId={process.env.VITE_GOOGLE_CLIENT_ID!}>
+          <StoreProvider>
+            <AuthLayout>
+              <Header />
+              {children}
+              <Footer />
+            </AuthLayout>
+          </StoreProvider>
+        </GoogleOAuthProvider>
       </body>
     </html>
   );

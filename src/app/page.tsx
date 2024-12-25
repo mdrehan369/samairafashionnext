@@ -48,20 +48,27 @@ export default function Home() {
     const [response, setResponse] = useState([]);
     const [response2, setResponse2] = useState([]);
     const [page, setPage] = useState(0);
+    const [windowSt, setWindowState] = useState<any>({})
 
 
     useEffect(() => {
+
+        if (typeof window !== 'undefined') {
+            setWindowState(window)
+        }
+
         setButtonLoader(true)
             ; (async () => {
                 try {
+                    console.log(process.env.NEXT_PUBLIC_BACKEND_URL)
                     const res = await axios.get(`/api/v1/products?page=${page}`, {
-                        baseURL: process.env.VITE_BACKEND_URL,
+                        baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
                         withCredentials: true
                     });
                     setResponse((prev) => prev.concat(res.data.data));
 
                     const res2 = await axios.get(`/api/v1/products?page=${page}`, {
-                        baseURL: process.env.VITE_BACKEND_URL,
+                        baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
                         withCredentials: true
                     });
                     setResponse2((prev) => prev.concat(res2.data.data));
@@ -78,7 +85,7 @@ export default function Home() {
 
     return (
         <Container className='relative'>
-            <Carousel onClick={() => window.scrollTo(0, 700)} />
+            <Carousel onClick={() => windowSt.scrollTo(0, 700)} />
             <Offer />
             <div className='w-full h-full md:my-10 my-4 space-y-10 overflow-hidden'>
                 <div className='flex items-center justify-center gap-6 md:mb-10 mb-4'>

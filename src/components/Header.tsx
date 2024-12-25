@@ -94,7 +94,7 @@ function Header() {
                 <div className='w-[30%] h-full hidden md:block'>
                     <ul className='w-full h-full flex items-center justify-center gap-10 font-semibold text-md'>
                         <Link href='/' className={activeClasses("/")}>Home</Link>
-                        <Link href='/shop' className={activeClasses("/shop")}
+                        <div className={activeClasses("/shop")}
                             onMouseEnter={() => setDropdown(true)}
                             onMouseLeave={() => setDropdown(false)}
                             onClick={(e) => e.preventDefault()}
@@ -109,7 +109,7 @@ function Header() {
                                     <Link href={'/shop?category=Farasha'} className='px-4 py-4 w-52 text-start hover:underline hover:bg-gray-200  dark:hover:bg-[#132d6a] transition-colors text-sm font-medium'>Farasha</Link>
                                 </div>
                             }
-                        </Link>
+                        </div>
                         <Link href='/policies/aboutus' className={activeClasses("/policies/aboutus")}>About Us</Link>
                         <Link href='/policies/contact' className={activeClasses("/policies/contact")}>Contact Us</Link>
                     </ul>
@@ -154,12 +154,12 @@ function Header() {
                         <Link href='/search' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 ${'/search' === pathname && 'bg-gray-300 dark:bg-blue-950'} transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Search'] after:absolute after:text-xs relative after:font-normal after:bottom-[-30px] after:dark:bg-blue-950 after:rounded-sm after:px-1 after:py-0.5 text-black after:left-0`}>
                             <IoIosSearch size='22' />
                         </Link>
-                        {status && <Link href='/cart' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 ${'/cart' === pathname && 'bg-gray-300 dark:bg-blue-950'} transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Cart'] after:absolute after:text-xs relative after:font-normal after:dark:bg-blue-950 after:bottom-[-30px] after:rounded-sm after:px-1 after:py-0.5 after:left-2`}><IoCartOutline size='22' /></Link>}
+                        {status && <Link href='/cart' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 ${'/cart' === pathname && 'bg-gray-300 dark:bg-blue-950'} transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Cart'] after:absolute after:text-xs relative after:font-normal after:dark:bg-blue-950 after:bottom-[-30px] after:rounded-sm after:px-1 text-black after:py-0.5 after:left-2`}><IoCartOutline size='22' /></Link>}
                         {
                             status &&
                             <>
-                                <Link href='/orders' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 ${'/orders' === pathname && 'bg-gray-300 dark:bg-blue-950'} transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Orders'] after:dark:bg-blue-950 after:absolute after:text-xs relative after:font-normal after:bottom-[-30px] after:rounded-sm after:px-1 after:py-0.5 after:left-0`}><BsTruck size='22' /></Link>
-                                <Link onClick={() => setOpenModal(true)} href='#' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Logout'] after:dark:bg-blue-950 after:absolute after:text-xs relative after:font-normal after:bottom-[-30px] after:rounded-sm after:px-1 after:py-0.5 after:left-0`}><IoExitOutline size='22' /></Link>
+                                <Link href='/orders' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 ${'/orders' === pathname && 'bg-gray-300 dark:bg-blue-950'} transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Orders'] after:dark:bg-blue-950 after:absolute after:text-xs relative after:font-normal after:bottom-[-30px] text-black after:rounded-sm after:px-1 after:py-0.5 after:left-0`}><BsTruck size='22' /></Link>
+                                <Link onClick={() => setOpenModal(true)} href='#' className={`hover:bg-[#e2e2e2] hover:dark:bg-blue-950 transition px-2 py-2 rounded-full after:bg-gray-200 after:opacity-0 after:hover:opacity-100 after:transition-opacity after:w-fit after:h-fit after:content-['Logout'] after:dark:bg-blue-950 after:absolute after:text-xs relative after:font-normal after:bottom-[-30px] after:rounded-sm after:px-1 after:py-0.5 text-black after:left-0`}><IoExitOutline size='22' /></Link>
                             </>
                         }
                         {

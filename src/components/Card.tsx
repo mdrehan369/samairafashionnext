@@ -3,10 +3,11 @@
 import { faCartShopping, faIndianRupee, faIndianRupeeSign, faMinus, faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import Button from './Button';
 import { Hourglass } from 'react-loader-spinner';
 import { useAppSelector } from '@/lib/hooks';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
 
@@ -16,7 +17,7 @@ function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
     const [color, setColor] = useState(product.color);
     const status = useAppSelector(state => state.auth.status);
     const [discount, setDiscount] = useState(0);
-    const navigate = useNavigate();
+    const navigate = useRouter();
 
     const sizes = [52, 54, 56, 58, 60, 62, 'Customize As Per Request'];
 
@@ -57,17 +58,17 @@ function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
         localStorage.setItem("product", JSON.stringify(data));
 
         if (!status) {
-            return navigate('/signin')
+            return navigate.push('/signin')
         }
 
-        navigate('/checkoutPage');
+        navigate.push('/checkoutPage');
     }
 
     return (
         <div className={`fixed z-40 animate-animate-appear ${isExiting && ' animate-animate-disappear'} top-0 left-0 w-[100vw] bg-black backdrop-blur-sm bg-opacity-50 h-[100vh] flex items-center justify-center`}>
             <div id='modal' className={`md:w-[50%] w-[95%] h-[80%] md:h-[70%] bg-white shadow-lg relative rounded-xl ${isExiting && ' animate-animate-disappear'} p-0 flex md:flex-row flex-col items-start justify-start gap-0 dark:bg-secondary-color overflow-hidden`}>
                 <FontAwesomeIcon icon={faXmark} className='absolute dark:hover:bg-slate-900 top-3 cursor-pointer hover:bg-gray-200 transition-colors rounded-lg right-3 text-gray-500 size-7 font-normal' onClick={handleModal} />
-                <img src={product.image?.url || product.images[0].url} alt='image' className='md:w-[50%] w-full md:h-full h-[50%] object-cover rounded-none md:p-4 p-1 bg-gray-200 dark:bg-transparent' />
+                <Image width={1000} height={1000} src={product.image?.url || product.images[0].url} alt='image' className='md:w-[50%] w-full md:h-full h-[50%] object-cover rounded-none md:p-4 p-1 bg-gray-200 dark:bg-transparent' />
                 <div className='md:w-[50%] w-full md:h-full h-[50%] flex flex-col items-start justify-start md:gap-4 gap-2 md:pt-10 pt-0'>
                     <div className='md:space-y-2 space-y-1'>
                         <h1 className='md:text-lg text-sm tracking-wide font-bold w-full md:mt-4 mt-2 px-4 md:line-clamp-2 line-clamp-1'>{product.title}</h1>
@@ -103,7 +104,7 @@ function Card({ res, productLoader, ...props }: any) {
     const [openModal, setOpenModal] = useState(false);
     const [isExiting, setIsExiting] = useState(false);
     const ref = useRef(null);
-    const navigate = useNavigate();
+    const navigate = useRouter();
 
     useEffect(() => {
         const observer = new IntersectionObserver((node) => {
@@ -136,13 +137,13 @@ function Card({ res, productLoader, ...props }: any) {
                 {
                     !productLoader ?
                         <>
-                            <div onClick={(e) => {e.currentTarget.classList.length !== 0 && navigate(`/product/${res?._id}`)}} className='relative z-20'>
+                            <div onClick={(e) => {e.currentTarget.classList.length !== 0 && navigate.push(`/product/${res?._id}`)}} className='relative z-20'>
                                 <span className="bg-red-600 z-10 text-white text-md font-medium me-2 md:px-2.5 px-1.5 py-0.5 rounded-none dark:bg-blue-900 dark:text-blue-300 absolute md:top-2 top-2 md:right-2 right-2 md:text-xs text-xs">-{(((res?.comparePrice - res?.price) / res?.comparePrice) * 100).toString().slice(0, 2)}% OFF</span>
                                 <div className='overflow-hidden relative'>
 
                                     <FontAwesomeIcon icon={faCartShopping} className='absolute bottom-3 right-3 bg-gray-200 text-black p-2 rounded-2xl hover:bg-gray-300 z-40 cursor-pointer block md:hidden' onClick={(e) => setOpenModal(true) } />
-                                    <img src={res?.image?.url || res.images[1]?.url || res.images[0].url} className='w-[100%] absolute p-0 transition-all duration-500 opacity-100 ease-in-out md:h-[50vh] h-[25vh] hover:scale-[1.2] brightness-75 object-cover -z-30' />
-                                    <img src={res?.image?.url || res.images[0].url} className='w-[100%] p-0 transition-all duration-1000 cursor-pointer ease-in-out opacity-100 md:h-[50vh] h-[25vh] object-cover hover:scale-[1.2] hover:opacity-0 dark:hover:opacity-35' />
+                                    <Image width={1000} height={1000} alt='' src={res?.image?.url || res.images[1]?.url || res.images[0].url} className='w-[100%] absolute p-0 transition-all duration-500 opacity-100 ease-in-out md:h-[50vh] h-[25vh] hover:scale-[1.2] brightness-75 object-cover -z-30' />
+                                    <Image width={1000} height={1000} alt='' src={res?.image?.url || res.images[0].url} className='w-[100%] p-0 transition-all duration-1000 cursor-pointer ease-in-out opacity-100 md:h-[50vh] h-[25vh] object-cover hover:scale-[1.2] hover:opacity-0 dark:hover:opacity-35' />
                                 </div>
                                 <h1 className='md:px-4 px-1 md:text-gray-700 text-black dark:text-white mt-2 text-center w-full md:text-sm text-xs md:h-10 hover:underline md:line-clamp-1 line-clamp-2'>{res?.title.slice(0, 30)}{res?.title.length > 30 && '...'}</h1>
                                 <div className='flex items-center justify-between w-full mt-4'>
