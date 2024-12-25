@@ -22,11 +22,11 @@ function Success() {
             const paymentObj = JSON.parse(localStorage.getItem("paymentObj")!);
             const isBuyNow = JSON.parse(localStorage.getItem("product")!) !== null ? true : false;
 
-            if (paymentObj.type === 'ziina') {
+            if (paymentObj?.type === 'ziina') {
                 url += `ziina/check`
-            } else if (paymentObj.type === 'tabby') {
+            } else if (paymentObj?.type === 'tabby') {
                 url += `tabby/check`
-            } else if(paymentObj.type === 'phonepe') {
+            } else if(paymentObj?.type === 'phonepe') {
                 url += `phonepe/check`
             } else {
                 setIsPaid(true);

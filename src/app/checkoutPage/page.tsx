@@ -88,7 +88,7 @@ function CheckoutPage() {
             } catch (err) {
                 console.log(err)
             } finally {
-                windowSt.scrollTo(0, 0)
+                // windowSt?.scrollTo(0, 0)
                 setLoader(false);
             }
         })();

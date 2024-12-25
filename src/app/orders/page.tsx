@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, LightSpinner, Spinner } from "@/components/index";
 import axios from "axios";
-import { useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
 import { useAppSelector } from '@/lib/hooks';
@@ -133,9 +132,9 @@ const OrderDetails = () => {
                         }
                         <div className='bg-gray-100 dark:bg-secondary-color overflow-scroll py-4 flex flex-col items-center justify-start pt-4 md:w-[20%] w-full md:h-[100vh] h-auto gap-2'>
                             {
-                                Object.keys(orders).map((order, index) => <div
+                                Object.keys(orders).map((order:any, index) => <div
                                     key={index}
-                                    onClick={() => {setCurrOrder(orders[Number(order)]); windowSt.screen.width < 500 && windowSt.scrollTo(0, 0)}}
+                                    onClick={() => {setCurrOrder(orders[order]); windowSt.screen.width < 500 && windowSt.scrollTo(0, 0)}}
                                     className={`w-[90%] rounded-md p-4 bg-gray-200 dark:bg-blue-950 dark:border-0 dark:hover:border-0 dark:hover:bg-[#2c4682] dark:text-white cursor-pointer hover:border-gray-400 hover:bg-gray-300 transition-colors border-[1px] text-sm font-medium ${currOrder._id.slice(0, 10) === order && 'border-gray-400 bg-gray-300 dark:bg-[#2c4682]'} text-gray-800 tracking-wider`}>
                                     <span className='font-bold text-xs text-gray-700 dark:text-gray-300 mr-4'>ORDER ID: </span>#{`SF0${order.slice(5, 10)}` || Date.now()}
                                 </div>)
