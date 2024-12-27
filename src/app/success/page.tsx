@@ -69,7 +69,7 @@ function Success() {
                         <Image width={1000} height={1000} src={"/tick.gif"} className='w-[40%]' alt="Tick" />
                         <h1 className='md:text-4xl text-2xl text-center font-bold dark:text-stone-200 text-stone-700'>Order Placed Successfully!</h1>
                         <p className='text-center dark:text-stone-300 text-stone-500'>Thanks for ordering from Samaira Fashion. <br /> We will deliver your product within the given time.</p>
-                        <Button className='bg-green-400 text-sm font-bold dark:bg-green-600 text-green-900 dark:text-green-950 dark:hover:bg-green-500 dark:hover:text-green-800'>
+                        <Button className='bg-green-400 text-sm font-bold dark:bg-green-600 text-green-900 dark:text-green-950 dark:hover:bg-green-500 dark:hover:text-green-800 border-green-400'>
                             <Link href={'/'}>Continue Shopping</Link>
                         </Button>
                     </div>

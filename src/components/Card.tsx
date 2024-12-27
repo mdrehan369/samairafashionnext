@@ -65,8 +65,8 @@ function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
     }
 
     return (
-        <div className={`fixed z-40 animate-animate-appear ${isExiting && ' animate-animate-disappear'} top-0 left-0 w-[100vw] bg-black backdrop-blur-sm bg-opacity-50 h-[100vh] flex items-center justify-center`}>
-            <div id='modal' className={`md:w-[50%] w-[95%] h-[80%] md:h-[70%] bg-white shadow-lg relative rounded-xl ${isExiting && ' animate-animate-disappear'} p-0 flex md:flex-row flex-col items-start justify-start gap-0 dark:bg-secondary-color overflow-hidden`}>
+        <div className={`fixed z-50 animate-animate-appear ${isExiting && ' animate-animate-disappear'} top-0 left-0 w-[100vw] bg-black backdrop-blur-sm bg-opacity-50 h-[100vh] flex items-center justify-center`}>
+            <div id='modal' className={`md:w-[50%] w-[95%] h-[80%] z-50 md:h-[70%] bg-white shadow-sm relative rounded-xl ${isExiting && ' animate-animate-disappear'} p-0 flex md:flex-row flex-col items-start justify-start gap-0 dark:bg-secondary-color overflow-hidden`}>
                 <FontAwesomeIcon icon={faXmark} className='absolute dark:hover:bg-slate-900 top-3 cursor-pointer hover:bg-gray-200 transition-colors rounded-lg right-3 text-gray-500 size-7 font-normal' onClick={handleModal} />
                 <Image width={1000} height={1000} src={product.image?.url || product.images[0].url} alt='image' className='md:w-[50%] w-full md:h-full h-[50%] object-cover rounded-none md:p-4 p-1 bg-gray-200 dark:bg-transparent' />
                 <div className='md:w-[50%] w-full md:h-full h-[50%] flex flex-col items-start justify-start md:gap-4 gap-2 md:pt-10 pt-0'>
@@ -91,7 +91,7 @@ function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
                         </div>
                         <span className='text-xs mt-4 dark:text-white text-stone-700 font-medium'>Subtotal: {isIndia ? <FontAwesomeIcon icon={faIndianRupee} className='font-normal mr-0.5 ml-1' /> : 'Dhs.'}<span className='font-bold dark:text-white text-stone-700'>{isIndia ? product.price * quantity - discount : Math.floor(product.price / dirham_to_rupees) * quantity - discount}</span></span>
                     </div>
-                    <Button className=' self-center md:text-sm text-xs uppercase hover:bg-transparent hover:text-black border-2 hover:shadow-none duration-300 bg-[#1b1b1b] border-[#1b1b1b] md:py-auto py-3 w-[90%] md:my-auto my-0 justify-self-end text-white transition-colors' onClick={handleBuyNow}>Proceed To Checkout</Button>
+                    <Button className=' self-center md:text-sm text-xs uppercase border-2 duration-300 w-[90%] md:my-auto my-0 justify-self-end' onClick={handleBuyNow}>Proceed To Checkout</Button>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@ function Card({ res, productLoader, ...props }: any) {
                                     </h2>
                                 </div>
                             </div>
-                            <Button className='text-sm w-[100%] mt-4 py-3 transition-transform duration-300 border-2 border-black hover:border-transparent rounded-sm font-bold invisible md:block hidden' onClick={() => setOpenModal(true)}>QUICK BUY</Button>
+                            <Button className='text-sm w-[100%] mt-4 py-3 rounded-sm font-bold invisible md:block hidden' onClick={() => setOpenModal(true)}>QUICK BUY</Button>
                         </>
                         : <Hourglass
                             visible={true}

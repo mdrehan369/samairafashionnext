@@ -3,7 +3,7 @@ import { Container } from '@/components';
 const Privacy = () => {
     return (
         <Container className="p-4 w-[70%] mx-auto prose text-sm font-[400] animate-animate-appear">
-            <h1 className="text-5xl font-bold mb-10 w-full text-center">Privacy Policy</h1>
+            <h1 className="text-5xl font-bold mb-10 w-full text-center text-primary-color">Privacy Policy</h1>
             
             <p>
                 This Privacy Policy describes how My Store (the "<strong>Site</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from samaira.shop (the "<strong>Site</strong>") or otherwise communicate with us (collectively, the "<strong>Services</strong>"). For purposes of this Privacy Policy, "<strong>you</strong>" and "<strong>your</strong>" means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.
@@ -198,12 +198,12 @@ const Privacy = () => {
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Contact</h3>
             <p>
-                Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call <span className="font-semibold">[TOLL FREE TELEPHONE NUMBER IF YOU HAVE A PHYSICAL RETAIL LOCATION]</span> or email us at <a href="mailto:samaira.shop1@gmail.com" className="text-blue-500 hover:underline">samaira.shop1@gmail.com</a>.
+                Should you have any questions about our privacy practices or this Privacy Policy, or if you would like to exercise any of the rights available to you, please call <span className="font-semibold">+97 1921660581</span> or email us at <a href="mailto:samaira.shop1@gmail.com" className="text-blue-500 hover:underline">samaira.shop1@gmail.com</a>.
             </p>
 
             <h3 className="text-xl font-semibold mt-4 mb-2">Last Updated</h3>
             <p>
-                This Privacy Policy was last updated on: [DATE OF LAST UPDATE].
+                This Privacy Policy was last updated on: 26th Jan 2017.
             </p>
         </Container>
     );

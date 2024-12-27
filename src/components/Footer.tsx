@@ -1,6 +1,6 @@
 "use client"
 
-import React, { use } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLocation, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram, faPinterest } from "@fortawesome/free-brands-svg-icons";

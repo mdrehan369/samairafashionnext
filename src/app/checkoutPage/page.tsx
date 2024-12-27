@@ -207,7 +207,7 @@ function CheckoutPage() {
     }
 
     return (
-        <Container className='w-full flex md:flex-row font-sans flex-col md:items-start items-center justify-center divide-x-2'>
+        <Container className='w-full flex animate-animate-appear md:flex-row font-sans flex-col md:items-start items-center justify-center divide-x-2'>
             {!loader ?
                 <>
                     <form

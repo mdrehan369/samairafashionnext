@@ -14,7 +14,7 @@ function Button({
 }: Props) {
     return (
         <button
-        className={twMerge('bg-[#232323] hover:bg-opacity-80 disabled:bg-opacity-50 border-[#232323] text-gray-200 dark:bg-[#00224d] hover:dark:bg-[#132d6a] rounded py-4 px-6 hover:shadow-xl shadow-black dark:hover:text-white text-lg font-medium border-0 dark:border-0 dark:text-white', className)}
+        className={twMerge('bg-secondary-color text-primary-color hover:bg-opacity-80 disabled:bg-opacity-50 border-secondary-color rounded py-4 px-6 hover:bg-transparent transition-colors duration-300 shadow-black text-lg font-medium border-2', className)}
         {...props}>
             {children}
         </button>

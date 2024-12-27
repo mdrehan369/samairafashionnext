@@ -46,6 +46,7 @@ export default {
               poppins: ["--font-poppins", "sans-serif"],
               lato: ["--font-lato", "sans-serif"],
               heading: ["--font-fjalla-one", "sans-serif"],
+              caudex: ["--font-caudex", "serif"],
           }
       },
   },

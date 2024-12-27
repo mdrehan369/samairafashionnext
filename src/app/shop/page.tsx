@@ -28,6 +28,7 @@ function Shop() {
 
         ; (async () => {
             setProductLoader(true);
+            setLoader(true);
             try {
                 console.log(params)
                 const response = await axios.get(`/api/v1/products/category?category=${params.get("category")}&limit=${limit}&page=${page}&attribute=${sort.attribute}&order=${sort.order}`, {
@@ -49,7 +50,7 @@ function Shop() {
 
     return (
         !loader ?
-            <Container className='flex flex-col items-center justify-start gap-6'>
+            <Container className='flex flex-col items-center justify-start gap-6 animate-animate-appear'>
                 <div className='self-end md:mr-20 my-10 flex items-center justify-start gap-6 md:w-auto w-full'>
                     <div className='w-fit ml-4'>
                         <label htmlFor="sort" className='text-stone-700 dark:text-white font-bold text-xs mr-3'>SORT BY</label>

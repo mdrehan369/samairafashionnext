@@ -3,30 +3,13 @@
 import React, { useEffect, useState } from 'react'
 import Spinner from './Spinner';
 import { login, setLocation } from "@/lib/features/authSlice"
-import { setTheme } from "@/lib/features/themeSlice"
 import axios from 'axios';
-import { useAppDispatch, useAppSelector } from '@/lib/hooks';
+import { useAppDispatch } from '@/lib/hooks';
 
 function AuthLayout({ children }: { children: React.ReactNode }) {
 
     const dispatch = useAppDispatch();
     const [loader, setLoader] = useState(true);
-    const theme = useAppSelector(state => state.theme.theme);
-
-    useEffect(() => {
-        if (theme === null && localStorage.getItem("theme") !== null) {
-            if (localStorage.getItem("theme") === 'light') {
-                document.documentElement.classList.remove('dark')
-            } else {
-                document.documentElement.classList.add('dark')
-            }
-            dispatch(setTheme(localStorage.getItem("theme")))
-        } else if (theme === null) {
-            localStorage.setItem("theme", 'light');
-            document.documentElement.classList.remove('dark')
-            dispatch(setTheme('light'));
-        }
-    }, [])
 
     useEffect(() => {
         ; (async () => {

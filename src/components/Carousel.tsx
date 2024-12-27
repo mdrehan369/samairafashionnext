@@ -47,13 +47,13 @@ function Carousel({ ...props }) {
         <>
 
             <div {...props} className='w-[100vw] h-[90vh] animate-animate-appear cursor-pointer relative overflow-hidden m-auto'>
-                <div className='w-full h-full absolute top-0 left-0 transition duration-500 scroll-smooth opacity-0' id='slider'>
+                <div className='w-[100vw] h-[90vh] absolute top-0 left-0 transition duration-500 scroll-smooth opacity-0' id='slider'>
                     <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner3.webp" : "/pic1ph.webp"} className='absolute left-0 top-0 w-full md:h-full h-[90%] transition-opacity duration-500 opacity-100  md:object-cover object-cover' />
                     <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner1.webp" : "/pic2ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full md:object-cover h-[90%]' />
                     <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner2.webp" : "/pic1ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' />
                     <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner5.webp" : "/pic1ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' />
-                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner5.png" : "/pic2ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-full h-[90%] md:object-cover' onLoad={(e) => e.currentTarget.parentElement?.classList.replace('opacity-0', 'opacity-100')} />
-                    <div id='bar' className='absolute flex items-center shadow-xl border-[1px] border-black justify-center gap-2 rounded-md bg-black opacity-40 px-2 md:bottom-10 bottom-56 left-[50%] translate-x-[-50%] p-1'>
+                    <Image fill={true} alt='' src={windowSt?.screen.width > 500 ? "/banner5.png" : "/pic2ph.webp"} className='absolute transition-opacity duration-500 opacity-100 left-0 top-0 w-full md:h-[90vh] h-[90%] ' onLoad={(e) => e.currentTarget.parentElement?.classList.replace('opacity-0', 'opacity-100')} />
+                    <div id='bar' className='absolute flex items-center shadow-xl border-[1px] border-black justify-center gap-2 rounded-md object-cover bg-black opacity-40 px-2 md:bottom-10 bottom-[30px] left-[50%] translate-x-[-50%] p-1'>
                         <div className='rounded-full size-2 border-[1px] border-white bg-white scale-125'></div>
                         <div className='rounded-full size-2 border-[1px] border-white'></div>
                         <div className='rounded-full size-2 border-[1px] border-white'></div>

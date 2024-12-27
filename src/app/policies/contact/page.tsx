@@ -19,7 +19,7 @@ function Contact() {
         <Container className='text-sm h-full flex md:flex-row flex-col-reverse md:mt-0 mt-10 items-start justify-start animate-animate-appear'>
             <div className='flex items-center justify-center md:w-[60%] w-full h-auto'>
                 <form onSubmit={handleSubmit(submit)} className='flex flex-col mt-20 items-start justify-around h-[90vh] md:w-[70%] w-[90%]' >
-                    <h1 className='text-xl font-extrabold tracking-wide'>CONTACT</h1>
+                    <h1 className='text-xl font-extrabold text-primary-color tracking-wide'>CONTACT</h1>
                     <div className='space-y-1'>
                         <p>Have a question or comment? </p>
                         <p>Use the form below to send us a message or contact us by mail at:</p>
@@ -33,16 +33,16 @@ function Contact() {
             </div>
             <div className='flex flex-col items-center justify-center md:w-[30%] w-full md:h-[90vh] h-auto'>
                 <div className='flex flex-col items-start justify-center gap-6'>
-                    <h1 className='text-lg font-bold'>Get In Touch!</h1>
+                    <h1 className='text-lg font-bold text-primary-color'>Get In Touch!</h1>
                     <div className='space-y-1'>
                         <p>We'd love to hear from you - please use the form to</p>
                         <p>send us your message or ideas.</p>
                     </div>
-                    <div className='flex flex-col gap-1'>
+                    <div className='flex flex-col gap-1 text-primary-color'>
                         <a href='https://wa.me/+971521660581' target='__blank' className='hover:underline'><FontAwesomeIcon icon={faWhatsappSquare} className='mr-2 size-4' />Whatsapp: +97 15216 60581</a>
                         <a href='mailto:samaira.shop1@gmail.com' target='__blank' className='hover:underline'><FontAwesomeIcon icon={faEnvelope} className='mr-2 size-4' />samaira.shop1@gmail.com</a>
                     </div>
-                    <div className='space-y-1'>
+                    <div className='space-y-1 text-primary-color'>
                         <p><FontAwesomeIcon icon={faLocationPin} className='mr-2 size-4' />Deira, Dubai. UAE</p>
                     </div>
                     <div className='w-full h-[2px] bg-gray-200'></div>

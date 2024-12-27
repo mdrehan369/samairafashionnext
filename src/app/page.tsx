@@ -85,13 +85,13 @@ export default function Home() {
 
     return (
         <Container className='relative'>
-            <Carousel onClick={() => windowSt.scrollTo(0, 700)} />
+            <Carousel />
             <Offer />
             <div className='w-full h-full md:my-10 my-4 space-y-10 overflow-hidden'>
                 <div className='flex items-center justify-center gap-6 md:mb-10 mb-4'>
-                    <div className='h-[3px] bg-stone-800 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
-                    <h1 id='h1' className='font-bold text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>NEW ARRIVALS</h1>
-                    <div className='h-[3px] bg-stone-800 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
+                    <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
+                    <h1 id='h1' className='font-medium text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>NEW ARRIVALS</h1>
+                    <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
                 </div>
                 <div className='flex flex-col items-center justify-start overflow-x-hidden'>
                     {!loader ?
@@ -109,9 +109,9 @@ export default function Home() {
                 <Image width={10000} height={10000} src={"/banner4.webp"} alt="Banner" />
 
                 <div className='flex items-center justify-center gap-6 md:mb-10 mb-4'>
-                    <div className='h-[3px] bg-stone-800 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
-                    <h1 id='h1' className='font-bold text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>BEST SELLERS</h1>
-                    <div className='h-[3px] bg-stone-800 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
+                    <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
+                    <h1 id='h1' className='font-medium text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>BEST SELLERS</h1>
+                    <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
                 </div>
                 <div className='flex flex-col items-center justify-start overflow-x-hidden'>
                     {!loader ?

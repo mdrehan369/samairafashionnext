@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Lato, Fjalla_One, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Lato, Fjalla_One, Poppins, Caudex } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./storeProvider";
 import { Footer, Header } from "@/components";
@@ -37,6 +37,13 @@ const flajallaOne = Fjalla_One({
   style: "normal",
 });
 
+const caudex = Caudex({
+  variable: "--font-caudex",
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
+})
+
 export const metadata: Metadata = {
   title: "Samaira Fashion",
   description: "Your one stop shop for Abayas, Hijabs, and more!",
@@ -56,10 +63,9 @@ export default function RootLayout({
           crossOrigin="anonymous"
           src="https://connect.facebook.net/en_US/sdk.js"
         ></script>
-        {/* <script type="text/javascript" src="/js/fbInit.js"></script> */}
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${flajallaOne.variable} ${lato.variable} antialiased bg-white dark:bg-[#020617] font-poppins `}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${caudex.variable} ${flajallaOne.variable} ${lato.variable} antialiased bg-white dark:bg-[#020617] font-poppins `}
       >
         <GoogleOAuthProvider clientId={process.env.VITE_GOOGLE_CLIENT_ID!}>
           <StoreProvider>
