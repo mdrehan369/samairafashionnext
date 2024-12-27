@@ -36,7 +36,6 @@ function Offer() {
     }, []);
 
     useEffect(() => {
-        console.log(currProduct)
         const interval = setInterval(async () => {
 
             const doc = document.getElementById('popup')

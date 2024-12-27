@@ -256,7 +256,6 @@ export default function Signin() {
 
     const handleFacebookLogin = () => {
         FB.login(function (response: any) {
-            console.log(response)
                 ; (async () => {
                     if (response.authResponse) {
                         const res = await axios.get(`/api/v1/users/facebookLogin/${response.userID}`, {
@@ -319,18 +318,6 @@ export default function Signin() {
                         <OtpPage otp={otp} email={email} />
                 }
             </div>
-
-            {/* <LoginSocialFacebook
-                appId='1595366361249902'
-                onResolve={(res) => console.log(res)}
-                onReject={(res) => console.log(res)}
-            >
-                Login
-            </LoginSocialFacebook>
-
-            <button onClick={sendEmail}>
-                send
-            </button> */}
 
         </Container>
     )

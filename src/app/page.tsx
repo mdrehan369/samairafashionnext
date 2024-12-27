@@ -60,7 +60,6 @@ export default function Home() {
         setButtonLoader(true)
             ; (async () => {
                 try {
-                    console.log(process.env.NEXT_PUBLIC_BACKEND_URL)
                     const res = await axios.get(`/api/v1/products?page=${page}`, {
                         baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
                         withCredentials: true

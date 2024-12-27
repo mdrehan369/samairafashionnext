@@ -50,7 +50,6 @@ function Header() {
     if (searchParams.has("category"))
       setFullPath(`${pathname}?${searchParams.toString()}`);
     else setFullPath(pathname);
-    console.log(fullPath);
   }, [pathname, searchParams]);
 
   const activeClasses = (isActive: string) =>

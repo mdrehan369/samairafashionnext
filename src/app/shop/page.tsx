@@ -30,7 +30,6 @@ function Shop() {
             setProductLoader(true);
             setLoader(true);
             try {
-                console.log(params)
                 const response = await axios.get(`/api/v1/products/category?category=${params.get("category")}&limit=${limit}&page=${page}&attribute=${sort.attribute}&order=${sort.order}`, {
                     baseURL: process.env.NEXT_PUBLIC_BACKEND_URL, withCredentials: true
                 });
