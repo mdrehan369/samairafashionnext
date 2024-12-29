@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { Geist, Geist_Mono, Lato, Fjalla_One, Poppins, Caudex } from "next/font/google";
 import "./globals.css";
 import StoreProvider from "./storeProvider";
