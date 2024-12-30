@@ -6,7 +6,7 @@ import { logout } from "@/lib/features/authSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
-import { BsSignIntersectionFill, BsTruck } from "react-icons/bs";
+import { BsTruck } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
@@ -67,28 +67,28 @@ function Header() {
               !openModal
                 ? "bg-opacity-0 backdrop-blur-0 -z-30"
                 : "bg-opacity-50 backdrop-blur-md z-50"
-            } flex items-center justify-center transition-all bg-black duration-300`}
+            } flex items-center justify-center bg-black duration-0`}
           >
             <div
               className={`${
                 openModal ? "md:w-[30%] w-[90%] h-[30%]" : "w-0 h-0"
-              } overflow-hidden bg-[#f1f1f1] rounded-lg shadow-md dark:bg-secondary-color flex flex-col items-center justify-center gap-6 z-50`}
+              } overflow-hidden bg-[#f1f1f1] rounded-lg shadow-md flex flex-col items-center justify-center gap-6 z-50`}
             >
               {openModal && (
                 <>
-                  <div className="uppercase text-sm font-bold text-center z-50 dark:text-white">
+                  <div className="uppercase text-sm font-medium text-center z-40 dark:text-white">
                     Are You Sure You Want To Logout ?
                   </div>
                   <div className="flex items-center justify-center gap-6 w-full">
                     <button
-                      className="w-24 h-10 bg-red-400 rounded-md hover:bg-red-500 dark:bg-red-500 dark:hover:bg-red-600 text-sm font-bold"
+                      className="w-24 h-10 bg-red-400 rounded-md hover:bg-red-500 dark:bg-red-500 dark:hover:bg-red-600 text-sm font-medium"
                       onClick={() => handleLogout()}
                       disabled={loader}
                     >
                       {loader ? <LightSpinner color={""} /> : "Yes"}
                     </button>
                     <button
-                      className="w-24 h-10 bg-green-400 rounded-md hover:bg-green-500 dark:bg-green-500 dark:hover:bg-green-600 text-sm font-bold"
+                      className="w-24 h-10 bg-green-400 rounded-md hover:bg-green-500 dark:bg-green-500 dark:hover:bg-green-600 text-sm font-medium"
                       onClick={() => setOpenModal(false)}
                       disabled={loader}
                     >
@@ -132,7 +132,7 @@ function Header() {
                 width={1000}
                 height={1000}
                 src={"/logo.avif"}
-                className="md:w-[20%] w-[60%] h-fit md:mx-auto"
+                className="md:w-[20%] w-[60%] h-fit md:mx-auto cursor-pointer"
                 onClick={() => router.push("/")}
               />
 

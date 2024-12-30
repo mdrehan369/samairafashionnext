@@ -112,7 +112,7 @@ function Write({ setPage, product }: any) {
 
         <form onSubmit={handleSubmit(submit)} className='flex md:flex-row flex-col md:items-start items-center justify-center gap-6 mt-4 dark:text-white'>
             <div className='w-fit h-full flex flex-col items-start justify-start md:self-start'>
-                <h1 className='text-md font-medium dark:text-white text-stone-700'>Rating: {rating}</h1>
+                <h2 className='text-md font-medium dark:text-white text-stone-700'>Rating: {rating}</h2>
                 <div className='flex items-center dark:text-white justify-center text-2xl gap-2'>
                     {
                         [1, 2, 3, 4, 5].map((val, index) => <div key={index} className='cursor-pointer'>
@@ -144,7 +144,7 @@ const Modal = ({ setModal, total, discount, isIndia, dirham_to_rupees, quantity 
             <div className='bg-white p-4 rounded-md md:w-[20%] w-[90%] h-[70%] animate-animate-appear space-y-3 relative'>
                 <div><FontAwesomeIcon icon={faXmark} className='absolute top-2 right-2 bg-transparent hover:bg-gray-200 transition-colors rounded p-1 size-4 cursor-pointer text-gray-400' onClick={() => setModal(false)} /></div>
                 <Image alt='' width={1000} height={500} src={"/sale.gif"} className='' />
-                <h1 className='text-lg font-bold text-center w-full px-6'>Congratulations!</h1>
+                <h2 className='text-lg font-bold text-center w-full px-6'>Congratulations!</h2>
                 <p className='w-full text-center text-gray-500 text-sm'>You got additional {quantity >= 6 ? '15%' : '10%'} discount as you ordered {quantity} items</p>
                 <div className='w-full px-6 text-center text-gray-500 text-sm'>
                     <p>Total Price: {isIndia ? <FontAwesomeIcon icon={faIndianRupeeSign} className='mr-1' /> : 'Dhs. '}{isIndia ? total : Math.floor(total / dirham_to_rupees)}</p>
@@ -178,7 +178,7 @@ function RelatedProducts({ category }: any) {
 
     return (
         <>
-            <h1 className='font-extrabold tracking-wide text-2xl text-stone-900 relative'><div className='w-full h-[2px] bg-black absolute bottom-0'></div>Related Products</h1>
+            <h2 className='font-extrabold tracking-wide text-2xl text-stone-900 relative'><div className='w-full h-[2px] bg-black absolute bottom-0'></div>Related Products</h2>
             <div className='w-[100vw] overflow-x-clip relative'>
                 <button className='absolute top-[40%] left-10 z-30 bg-gray-200 hover:bg-gray-300 hover:scale-[1.1] transition-transform shadow-xl md:size-16 size-10 text-black rounded-full border-2 border-gray-500 disabled:text-gray-600 disabled:opacity-80' onClick={() => {
                     if (counter.current > 0) {
@@ -390,16 +390,16 @@ function UserProductPage({ key }: any) {
                         </div>
 
                         <form className='md:w-[40%] mt-6 p-4 w-full relative h-[100%] flex flex-col items-start justify-start gap-6'>
-                            <h1 className='text-2xl font-bold text-stone-800 tracking-wider dark:text-white'>{product.title}</h1>
+                            <h2 className='text-2xl font-bold text-stone-800 tracking-wider dark:text-white'>{product.title}</h2>
 
                             <div>
-                                <h1 className='text-md relative font-bold dark:text-gray-400 text-gray-500 w-fit'>
+                                <h2 className='text-md relative font-bold dark:text-gray-400 text-gray-500 w-fit'>
                                     <div className=' absolute bg-gray-500 top-[50%] left-0 h-[2px] w-full'></div>
-                                    {isIndia ? <FontAwesomeIcon icon={faIndianRupee} className='mr-1' /> : 'Dhs.'}{isIndia ? product.comparePrice : Math.floor(product.comparePrice / dirham_to_rupees)}</h1>
-                                <h1 className='text-2xl font-bold dark:text-white text-stone-800 mt-2'>
+                                    {isIndia ? <FontAwesomeIcon icon={faIndianRupee} className='mr-1' /> : 'Dhs.'}{isIndia ? product.comparePrice : Math.floor(product.comparePrice / dirham_to_rupees)}</h2>
+                                <h2 className='text-2xl font-bold dark:text-white text-stone-800 mt-2'>
                                     {isIndia ? <FontAwesomeIcon icon={faIndianRupee} className='mr-1' /> : 'Dhs.'}{isIndia ? product.price : Math.floor(product.price / dirham_to_rupees)}
                                     <span className="bg-red-500 z-10 text-white text-sm font-medium me-2 px-1 py-0.5 ml-3 rounded-sm dark:bg-blue-900 dark:text-blue-300">-{(((product.comparePrice - product.price) / product.comparePrice) * 100).toString().slice(0, 2)}%</span>
-                                </h1>
+                                </h2>
                             </div>
 
                             <div className='text-sm font-[450] text-gray-600 space-y-1'>
@@ -443,9 +443,9 @@ function UserProductPage({ key }: any) {
                     </div>
                     <div className='w-full mt-10 flex flex-col items-center justify-start gap-0'>
                         <div className='flex items-center justify-center gap-0'>
-                            <h1 className={`w-fit relative text-center text-xs font-lato font-extrabold cursor-pointer border-b-2 ${page === 'Description' ? 'text-primary-color border-primary-color bg-secondary-color dark:bg-slate-900 dark:text-white' : 'text-gray-500 border-white'} px-4 py-3 hover:text-black hover:border-black font-bold md:text-xl text-sm tracking-wider dark:hover:bg-secondary-color dark:hover:text-white`} onClick={() => setPage('Description')}>Description</h1>
-                            <h1 className={`w-fit relative text-center text-xs font-lato font-extrabold cursor-pointer border-b-2 ${page === 'Reviews' ? 'text-primary-color border-primary-color bg-secondary-color dark:bg-slate-900 dark:text-white' : 'text-gray-500 border-white'} px-4 py-3 hover:text-black hover:border-black font-bold md:text-xl text-sm tracking-wider dark:hover:bg-secondary-color dark:hover:text-white`} onClick={() => setPage('Reviews')}>Reviews</h1>
-                            <h1 className={`w-fit relative text-center text-xs font-lato font-extrabold cursor-pointer border-b-2 ${page === 'Write' ? 'text-primary-color border-primary-color bg-secondary-color dark:bg-slate-900 dark:text-white' : 'text-gray-500 border-white'} px-4 py-3 hover:text-black hover:border-black font-bold md:text-xl text-sm tracking-wider dark:hover:bg-secondary-color dark:hover:text-white`} onClick={() => setPage('Write')}>Write A Review</h1>
+                            <h2 className={`w-fit relative text-center text-xs font-lato font-extrabold cursor-pointer border-b-2 ${page === 'Description' ? 'text-primary-color border-primary-color bg-secondary-color dark:bg-slate-900 dark:text-white' : 'text-gray-500 border-white'} px-4 py-3 hover:text-black hover:border-black font-bold md:text-xl text-sm tracking-wider dark:hover:bg-secondary-color dark:hover:text-white`} onClick={() => setPage('Description')}>Description</h2>
+                            <h2 className={`w-fit relative text-center text-xs font-lato font-extrabold cursor-pointer border-b-2 ${page === 'Reviews' ? 'text-primary-color border-primary-color bg-secondary-color dark:bg-slate-900 dark:text-white' : 'text-gray-500 border-white'} px-4 py-3 hover:text-black hover:border-black font-bold md:text-xl text-sm tracking-wider dark:hover:bg-secondary-color dark:hover:text-white`} onClick={() => setPage('Reviews')}>Reviews</h2>
+                            <h2 className={`w-fit relative text-center text-xs font-lato font-extrabold cursor-pointer border-b-2 ${page === 'Write' ? 'text-primary-color border-primary-color bg-secondary-color dark:bg-slate-900 dark:text-white' : 'text-gray-500 border-white'} px-4 py-3 hover:text-black hover:border-black font-bold md:text-xl text-sm tracking-wider dark:hover:bg-secondary-color dark:hover:text-white`} onClick={() => setPage('Write')}>Write A Review</h2>
                         </div>
                         <div className='w-full h-auto min-h-[50vh]'>
                             {page === 'Description' && <Description text={product.description} />}

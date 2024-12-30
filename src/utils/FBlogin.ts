@@ -35,6 +35,7 @@ export const fbLogin = () => {
   return new Promise((resolve, reject) => {
     window.FB.login((response: any) => {
       (async () => {
+        console.log(response);
         if (response.authResponse) {
           const res = await axios.get(
             `/api/v1/users/facebookLogin/${response.userID}`,

@@ -17,7 +17,7 @@ const Modal = ({ setModal, total, discount, isIndia, dirham_to_rupees, quantity 
             <div className='bg-white p-4 rounded-md md:w-[20%] w-[90%] h-[70%] animate-animate-appear space-y-3 relative'>
                 <div><FontAwesomeIcon icon={faXmark} className='absolute top-2 right-2 bg-transparent hover:bg-gray-200 transition-colors rounded p-1 size-4 cursor-pointer text-gray-400' onClick={() => setModal(false)} /></div>
                 <Image alt='' width={1000} height={500} src={"/sale.gif"} className='' />
-                <h1 className='text-lg font-bold text-center w-full px-6'>Congratulations!</h1>
+                <h2 className='text-lg font-bold text-center w-full px-6'>Congratulations!</h2>
                 <p className='w-full text-center text-gray-500 text-sm'>You got additional {quantity >= 6 ? '15%' : '10%'} discount as you ordered {quantity} items</p>
                 <div className='w-full px-6 text-center text-gray-500 text-sm'>
                     <p>Total Price: {isIndia ? <FontAwesomeIcon icon={faIndianRupeeSign} className='mr-1' /> : 'Dhs. '}{isIndia ? total : Math.floor(total / dirham_to_rupees)}</p>
@@ -128,14 +128,14 @@ function Cart() {
                 {total ?
                     <>
                         <div className='flex flex-col items-center justify-start md:h-[80vh] h-auto md:gap-10 gap-4 overflow-y-scroll md:w-auto w-full animate-animate-appear'>
-                            <h1 className='self-start font-bold md:text-2xl text-xl md:ml-0 ml-3'>My Cart</h1>
+                            <h2 className='self-start font-bold md:text-2xl text-xl md:ml-0 ml-3'>My Cart</h2>
                             {cart.map((item: any, index) =>
                                 <div key={index} className='flex cursor-pointer items-center justify-start md:w-[60vw] w-[95%] md:h-[35vh] h-auto bg-[#f1f1f1] dark:bg-secondary-color divide-x-2 divide-gray-300 dark:divide-slate-800'>
                                     <div className='w-[25%] md:h-full h-[90%] md:p-3 p-1'>
                                         <img src={item.product[0].image?.url || item.product[0].images[0].url} className='w-full h-full object-cover' alt="Product" />
                                     </div>
                                     <div className='h-full p-3 w-[75%] pr-10 flex flex-col items-start justify-start gap-0'>
-                                        <h1 className='font-bold md:text-xl text-sm tracking-wide hover:underline' onClick={() => navigate.push(`/product/${item.product[0]._id}`)}>{item.product[0].title.slice(0, 100)}</h1>
+                                        <h2 className='font-bold md:text-xl text-sm tracking-wide hover:underline' onClick={() => navigate.push(`/product/${item.product[0]._id}`)}>{item.product[0].title.slice(0, 100)}</h2>
                                         <p className='md:text-[0.92rem] text-xs text-gray-600 font-[450] tracking-wider h-[50%] md:mt-4 mt-2' dangerouslySetInnerHTML={{ __html: windowState.screen?.width > 500 ? item.product[0].description.slice(0, 250) : '' }}></p>
                                         <div className='flex flex-wrap items-end justify-between w-full'>
                                             <div>
@@ -171,7 +171,7 @@ function Cart() {
                                 {discount !== 0 && <div className='flex items-center justify-between w-full'><span className='font-bold text-sm text-black dark:text-white'>Discount:</span><span className='text-xl font-bold'>{isIndia ? <FontAwesomeIcon className='mr-2' icon={faIndianRupeeSign} /> : 'Dhs.'}{discount}</span></div>}
                             </div>
                             <div className='flex flex-col items-center gap-4 justify-start w-full'>
-                                <h1 className='font-bold text-sm self-start'>Coupon Code</h1>
+                                <h2 className='font-bold text-sm self-start'>Coupon Code</h2>
                                 <input type="text" className='w-[100%] h-[7vh] dark:bg-secondary-color dark:border-0 p-3 text-sm border-gray-300 border-[1px]' placeholder='Enter Coupon Code' />
                                 <p className='text-sm text-gray-500'>Coupon Code will be applied on the checkout page</p>
                             </div>
@@ -182,9 +182,9 @@ function Cart() {
                             </div>
                         </div>
                     </>
-                    : <h1 className='text-2xl font-bold text-center'>
+                    : <h2 className='text-2xl font-bold text-center'>
                         Nothing Is There In The Cart!<br />Add Some Products
-                    </h1>
+                    </h2>
                 }
             </Container>
             : <Spinner className='h-[100vh]' />

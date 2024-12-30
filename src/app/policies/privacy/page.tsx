@@ -3,7 +3,7 @@ import { Container } from '@/components';
 const Privacy = () => {
     return (
         <Container className="p-4 w-[70%] mx-auto prose text-sm font-[400] animate-animate-appear">
-            <h1 className="text-5xl font-bold mb-10 w-full text-center text-primary-color">Privacy Policy</h1>
+            <h2 className="text-5xl font-bold mb-10 w-full text-center text-primary-color">Privacy Policy</h2>
             
             <p>
                 This Privacy Policy describes how My Store (the "<strong>Site</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") collects, uses, and discloses your personal information when you visit, use our services, or make a purchase from samaira.shop (the "<strong>Site</strong>") or otherwise communicate with us (collectively, the "<strong>Services</strong>"). For purposes of this Privacy Policy, "<strong>you</strong>" and "<strong>your</strong>" means you as the user of the Services, whether you are a customer, website visitor, or another individual whose information we have collected pursuant to this Privacy Policy.

@@ -141,12 +141,12 @@ const OrderDetails = () => {
                             }
                         </div>
 
-                        <h1 className='text-xl md:hidden block font-bold text-stone-800 mb-3'>All Orders</h1>
+                        <h2 className='text-xl md:hidden block font-bold text-stone-800 mb-3'>All Orders</h2>
 
                         <div className='md:min-h-[90vh] md:w-[75%] w-full flex flex-col items-start pt-10 justify-start divide-y-2 md:m-0 m-6 dark:divide-gray-400 overflow-y-scroll'>
                             <div className='mb-4 flex items-start justify-between w-[80%]'>
                                 <div>
-                                    <h1 className="text-2xl font-bold mb-2"><span className='mr-4'>Order ID:</span> <span className='tracking-wider text-gray-600 dark:text-gray-400'>#SF0{currOrder._id.slice(5, 10)}</span>
+                                    <h2 className="text-2xl font-bold mb-2"><span className='mr-4'>Order ID:</span> <span className='tracking-wider text-gray-600 dark:text-gray-400'>#SF0{currOrder._id.slice(5, 10)}</span>
                                         {
                                             currOrder.isCancelled ?
                                                 <Batch text='Cancelled' color='bg-red-400' darkColor='bg-red-500' />
@@ -154,7 +154,7 @@ const OrderDetails = () => {
                                                     <Batch text='Pending' color='bg-yellow-400' darkColor='bg-yellow-600' />
                                                     : <Batch text='Delivered' color='bg-green-400' darkColor='bg-green-600' />
                                         }
-                                    </h1>
+                                    </h2>
                                     <p className="text-gray-600 dark:text-gray-400">Order date: {convertISOToDateString(currOrder?.date).slice(0, 13)}</p>
                                     {
                                         !currOrder.isCancelled &&

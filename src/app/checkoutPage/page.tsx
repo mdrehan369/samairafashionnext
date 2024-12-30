@@ -221,7 +221,7 @@ function CheckoutPage() {
                                 {error}
                             </div>
                         }
-                        <h1 className='text-xl font-bold self-start'>Contact</h1>
+                        <h2 className='text-xl font-bold self-start'>Contact</h2>
 
                         <Input
                             register={register}
@@ -231,10 +231,10 @@ function CheckoutPage() {
                             className='md:w-[80%] w-full bg-white'
                             errors={errors} />
 
-                        <h1 className='text-xl font-bold self-start'>Delivery</h1>
+                        <h2 className='text-xl font-bold self-start'>Delivery</h2>
 
                         <div className='md:w-[80%] w-full'>
-                            <h1 className='text-stone-800 dark:text-white font-[450] text-sm'>Country</h1>
+                            <h2 className='text-stone-800 dark:text-white font-[450] text-sm'>Country</h2>
                             <select
                                 defaultValue={'India'}
                                 className='md:w-[100%] p-3 rounded dark:bg-secondary-color dark:border-0 bg-white border-[1px] w-full border-gray-400 cursor-pointer'
@@ -336,7 +336,7 @@ function CheckoutPage() {
                         {
                             isIndianDelivery &&
                             <>
-                                <h1 className='font-bold text-black text-xl self-start dark:text-white'>Shipping Method</h1>
+                                <h2 className='font-bold text-black text-xl self-start dark:text-white'>Shipping Method</h2>
                                 <div className='md:w-[80%] w-full bg-gray-100 dark:bg-secondary-color border-[1px] border-gray-300 p-4 flex justify-between'>
                                     <span>Pan India : Free Delivery Offer</span>
                                     <span>Free</span>
@@ -344,7 +344,7 @@ function CheckoutPage() {
                             </>
                         }
                         <div className='w-full'>
-                            <h1 className='text-xl dark:text-white font-bold text-black self-start'>Payment</h1>
+                            <h2 className='text-xl dark:text-white font-bold text-black self-start'>Payment</h2>
                             <p className='text-stone-600 text-sm dark:text-gray-400'>All transactions are secure and encrypted.</p>
                         </div>
 

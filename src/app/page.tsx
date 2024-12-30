@@ -83,18 +83,19 @@ export default function Home() {
     }, [page]);
 
     return (
-        <Container className='relative'>
+        <Container className='relative animate-animate-appear'>
             <Carousel />
             <Offer />
             <div className='w-full h-full md:my-10 my-4 space-y-10 overflow-hidden'>
-                <div className='flex items-center justify-center gap-6 md:mb-10 mb-4'>
-                    <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
-                    <h1 id='h1' className='font-medium text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>NEW ARRIVALS</h1>
-                    <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
+                <div className='flex flex-col items-center justify-center gap-3 md:mb-10 mb-4'>
+                    {/* <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div> */}
+                    <h1 id='h2' className='font-medium text-gray-600 text-center text-[2rem] decoration-stone-700 font-lato md:fit w-full'>Welcome To Samaira Fashion</h1>
+                    <p>Your One Stop For Abayas!</p>
+                    {/* <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div> */}
                 </div>
-                <div className='flex flex-col items-center justify-start overflow-x-hidden'>
+                <div className='flex flex-col items-center justify-start overflow-hidden'>
                     {!loader ?
-                        <div className='grid md:grid-cols-4 grid-cols-2 w-full overflow-scroll overflow-x-hidden md:gap-6 gap-4 px-4 m-10 bg-transparent'>
+                        <div className='grid md:grid-cols-4 grid-cols-2 w-full box-border overflow-hidden md:gap-6 gap-4 px-4 m-10 bg-transparent'>
                             {response.map((res, index) => <Card className='card' res={res} key={index} productLoader={productLoader} />)}
                         </div>
                         : <Spinner />}
@@ -109,12 +110,12 @@ export default function Home() {
 
                 <div className='flex items-center justify-center gap-6 md:mb-10 mb-4'>
                     <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
-                    <h1 id='h1' className='font-medium text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>BEST SELLERS</h1>
+                    <h2 id='h2' className='font-medium text-stone-800 dark:text-[#e4e4e4] text-center text-[1.35rem] decoration-stone-700 font-heading md:w-[30%] w-full'>BEST SELLERS</h2>
                     <div className='h-[1px] bg-stone-500 dark:bg-[#e4e4e4] w-[30%] rounded-full md:block hidden'></div>
                 </div>
                 <div className='flex flex-col items-center justify-start overflow-x-hidden'>
                     {!loader ?
-                        <div className='grid md:grid-cols-4 grid-cols-2 w-full overflow-scroll overflow-x-hidden md:gap-6 gap-4 px-4 m-10 bg-transparent'>
+                        <div className='grid md:grid-cols-4 grid-cols-2 w-full overflow-x-hidden md:gap-6 box-border gap-4 px-4 m-10 bg-transparent'>
                             {response2.map((res, index) => <Card className='card' res={res} key={index} productLoader={productLoader} />)}
                         </div>
                         : <Spinner />}
@@ -139,7 +140,7 @@ export default function Home() {
             <div className='flex flex-col w-full h-[60vh] items-center justify-center mb-10'>
                 <div className='flex justify-around w-full items-center'>
                     <div className='md:w-[30%] w-0 h-[3px] bg-black'></div>
-                    <h1 className='my-10 font-bold md:text-xl text-lg'>@ FOLLOW US ON INSTAGRAM</h1>
+                    <h2 className='my-10 font-bold md:text-xl text-lg'>@ FOLLOW US ON INSTAGRAM</h2>
                     <div className='md:w-[30%] w-0 h-[3px] bg-black'></div>
                 </div>
                 <div className='md:flex grid grid-cols-2 grid-rows-2 w-[100%] h-full gap-0'>

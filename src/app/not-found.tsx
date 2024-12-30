@@ -10,7 +10,7 @@ const NotFound = () => {
         </Link>
       </header>
       <main className="max-w-lg">
-        <h1 className="text-6xl mb-4 text-red-500">404</h1>
+        <h2 className="text-6xl mb-4 text-red-500">404</h2>
         <p className="text-2xl mb-8">Oops! The page you are looking for does not exist.</p>
         <div className="space-y-4">
           <Link href="/" className="block bg-blue-500 text-white py-2 px-4 rounded">Go to Homepage</Link>

@@ -14,29 +14,29 @@ const Footer = () => {
     const pathname = usePathname();
 
     return (
-        !( pathname === 'signin') &&
+        !( pathname === '/signin') &&
         <footer className='bg-black mt-10 text-gray-300 text-sm flex flex-col items-center justify-start divide-y-2 divide-gray-600 w-full md:h-[50vh] h-auto relative bottom-0 left-0'>
             <div className='w-full h-[90%] mt-10 flex md:flex-row flex-col items-start md:gap-0 gap-10 md:justify-between justify-normal px-4'>
                 <div className='space-y-1'>
-                    <Image width={100} height={100} src={"/darkLogo.png"} alt="logo" className='md:w-[80%] w-full mb-4' />
+                    {/* <Image width={100} height={100} src={"/darkLogo.png"} alt="logo" className='md:w-[80%] w-full mb-4' /> */}
                     <p><FontAwesomeIcon icon={faLocation} className='text-white mr-2' /><span>29A/H/2 Palm Avenue,Kolkata 700019, West Bengal, India</span></p>
                     <p><FontAwesomeIcon icon={faPhone} className='text-white mr-2' /><span>+97 15216 60581</span></p>
                     <p><FontAwesomeIcon icon={faEnvelope} className='text-white mr-2' /><span>samaira.shop1@gmail.com</span></p>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-2'>
-                    <h1 className='font-bold text-lg text-white'>POLICIES</h1>
+                    <h2 className='font-bold text-lg text-white'>POLICIES</h2>
                     <Link href='/policies/shipping' className='hover:underline cursor-pointer hover:text-white'>Shipping Policy</Link>
                     <Link href='/policies/privacy' className='hover:underline cursor-pointer hover:text-white'>Privacy Policy</Link>
                     <Link href='/policies/refund' className='hover:underline cursor-pointer hover:text-white'>Refund Policy</Link>
                     <Link href='/policies/terms' className='hover:underline cursor-pointer hover:text-white'>Terms Of Service</Link>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-2'>
-                    <h1 className='font-bold text-white text-lg'>INFORMATION</h1>
+                    <h2 className='font-bold text-white text-lg'>INFORMATION</h2>
                     <Link href='/policies/contact' className='hover:underline cursor-pointer'>Contact</Link>
                     <Link href='/policies/aboutus' className='hover:underline cursor-pointer'>About Us</Link>
                 </div>
                 <div className='flex flex-col items-start justify-start gap-2'>
-                    <h1 className='font-bold text-lg text-white'>NEWSLETTER SIGN UP</h1>
+                    <h2 className='font-bold text-lg text-white'>NEWSLETTER SIGN UP</h2>
                     <h3>Sign up for exclusive updates, new arrivals & insider only discounts</h3>
                     <div className='flex items-center justify-start gap-4 w-full'>
                         <input className='w-[80%] py-3 px-3 bg-[#232323] border-[1px] border-white' placeholder='Enter Your Email Address' />

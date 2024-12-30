@@ -71,7 +71,7 @@ function Modal({ product, setOpenModal, isExiting, setIsExiting }: any) {
                 <Image width={1000} height={1000} src={product.image?.url || product.images[0].url} alt='image' className='md:w-[50%] w-full md:h-full h-[50%] object-cover rounded-none md:p-4 p-1 bg-gray-200 dark:bg-transparent' />
                 <div className='md:w-[50%] w-full md:h-full h-[50%] flex flex-col items-start justify-start md:gap-4 gap-2 md:pt-10 pt-0'>
                     <div className='md:space-y-2 space-y-1'>
-                        <h1 className='md:text-lg text-sm tracking-wide font-bold w-full md:mt-4 mt-2 px-4 md:line-clamp-2 line-clamp-1'>{product.title}</h1>
+                        <h2 className='md:text-lg text-sm tracking-wide font-bold w-full md:mt-4 mt-2 px-4 md:line-clamp-2 line-clamp-1'>{product.title}</h2>
                         <p className='px-4 text-gray-600 dark:text-gray-400 md:line-clamp-2 line-clamp-1 md:text-sm text-xs font-[450]'>{product.description}</p>
                     </div>
                     <div className='px-4'>
@@ -127,7 +127,7 @@ function Card({ res, productLoader, ...props }: any) {
                 <Modal product={res} setOpenModal={setOpenModal} isExiting={isExiting} setIsExiting={setIsExiting} />
             }
 
-            <div ref={ref} className='flex flex-col items-center justify-center rounded-sm cursor-pointer md:w-[22vw] w-full md:h-[72vh] h-[35vh] hover:border-gray-400 hover:dark:bg-secondary-color border-transparent border-[0px] dark:border-0 transition-all md:p-4 p-1 gap-0 overflow-hidden relative'
+            <div ref={ref} className='flex flex-col items-center justify-center rounded-sm cursor-pointer md:w-[22vw] w-full md:h-[72vh] h-[35vh] hover:border-gray-400 hover:dark:bg-secondary-color border-transparent border-[0px] dark:border-0 transition-all md:p-3 p-1 gap-0 overflow-hidden relative'
 
                 onMouseEnter={(e) => { !productLoader && e.currentTarget.lastElementChild?.classList.remove('invisible'); e.currentTarget.lastElementChild?.classList.add('translatee-y-[-4em]'); e.currentTarget.lastElementChild?.classList.add('animate-animate-appear') }}
 
@@ -142,10 +142,10 @@ function Card({ res, productLoader, ...props }: any) {
                                 <div className='overflow-hidden relative'>
 
                                     <FontAwesomeIcon icon={faCartShopping} className='absolute bottom-3 right-3 bg-gray-200 text-black p-2 rounded-2xl hover:bg-gray-300 z-40 cursor-pointer block md:hidden' onClick={(e) => setOpenModal(true) } />
-                                    <Image width={1000} height={1000} alt='' src={res?.image?.url || res.images[1]?.url || res.images[0].url} className='w-[100%] absolute p-0 transition-all duration-500 opacity-100 ease-in-out md:h-[50vh] h-[25vh] hover:scale-[1.2] brightness-75 object-cover -z-30' />
-                                    <Image width={1000} height={1000} alt='' src={res?.image?.url || res.images[0].url} className='w-[100%] p-0 transition-all duration-1000 cursor-pointer ease-in-out opacity-100 md:h-[50vh] h-[25vh] object-cover hover:scale-[1.2] hover:opacity-0 dark:hover:opacity-35' />
+                                    <Image priority={true} width={1000} height={1000} alt='' src={res?.image?.url || res.images[1]?.url || res.images[0].url} className='w-[100%] absolute p-0 transition-all duration-500 opacity-100 ease-in-out md:h-[50vh] h-[25vh] hover:scale-[1.2] brightness-75 object-cover -z-30' />
+                                    <Image priority={true} width={1000} height={1000} alt='' src={res?.image?.url || res.images[0].url} className='w-[100%] p-0 transition-all duration-1000 cursor-pointer ease-in-out opacity-100 md:h-[50vh] h-[25vh] object-cover hover:scale-[1.2] hover:opacity-0 dark:hover:opacity-35' />
                                 </div>
-                                <h1 className='md:px-4 px-1 md:text-gray-700 text-black dark:text-white mt-2 text-center w-full md:text-sm text-xs md:h-10 hover:underline md:line-clamp-1 line-clamp-2'>{res?.title.slice(0, 30)}{res?.title.length > 30 && '...'}</h1>
+                                <h2 className='md:px-4 px-1 md:text-gray-700 text-black dark:text-white mt-2 text-center w-full md:text-sm text-xs md:h-10 hover:underline md:line-clamp-1 line-clamp-2'>{res?.title.slice(0, 30)}{res?.title.length > 30 && '...'}</h2>
                                 <div className='flex items-center justify-between w-full mt-4'>
                                     <h2 className='px-0 md:text-sm text-xs text-start font-bold dark:text-gray-500 relative text-stone-600'>
                                         <div className='w-full md:h-[2px] h-[1px] bg-stone-600 dark:bg-gray-500 absolute top-[50%] left-0'></div>

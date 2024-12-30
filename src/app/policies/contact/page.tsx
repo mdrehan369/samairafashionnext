@@ -19,7 +19,7 @@ function Contact() {
         <Container className='text-sm h-full flex md:flex-row flex-col-reverse md:mt-0 mt-10 items-start justify-start animate-animate-appear'>
             <div className='flex items-center justify-center md:w-[60%] w-full h-auto'>
                 <form onSubmit={handleSubmit(submit)} className='flex flex-col mt-20 items-start justify-around h-[90vh] md:w-[70%] w-[90%]' >
-                    <h1 className='text-xl font-extrabold text-primary-color tracking-wide'>CONTACT</h1>
+                    <h2 className='text-xl font-extrabold text-primary-color tracking-wide'>CONTACT</h2>
                     <div className='space-y-1'>
                         <p>Have a question or comment? </p>
                         <p>Use the form below to send us a message or contact us by mail at:</p>
@@ -33,7 +33,7 @@ function Contact() {
             </div>
             <div className='flex flex-col items-center justify-center md:w-[30%] w-full md:h-[90vh] h-auto'>
                 <div className='flex flex-col items-start justify-center gap-6'>
-                    <h1 className='text-lg font-bold text-primary-color'>Get In Touch!</h1>
+                    <h2 className='text-lg font-bold text-primary-color'>Get In Touch!</h2>
                     <div className='space-y-1'>
                         <p>We'd love to hear from you - please use the form to</p>
                         <p>send us your message or ideas.</p>

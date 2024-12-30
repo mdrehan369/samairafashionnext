@@ -122,7 +122,7 @@ const OtpPage = ({ email, otp }: any) => {
         </div>
       )}
       <header className="mb-8">
-        <h1 className="text-2xl font-bold mb-1">OTP Verification</h1>
+        <h2 className="text-2xl font-bold mb-1">OTP Verification</h2>
         <p className="text-[15px] text-gray-600">
           Enter the 4-digit verification code that was sent to your email
           address.
@@ -133,33 +133,33 @@ const OtpPage = ({ email, otp }: any) => {
           <input
             type="text"
             {...register("otp1")}
-            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-beige border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-[#fffcf7] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none bg-[#fffcf7] focus:bg-[#fffcf8] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
             pattern="\d*"
             maxLength={1}
           />
           <input
             type="text"
             {...register("otp2")}
-            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-beige border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-[#fffcf7] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none bg-[#fffcf7] focus:bg-[#fffcf8] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
             maxLength={1}
           />
           <input
             type="text"
             {...register("otp3")}
-            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-beige border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-[#fffcf7] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none bg-[#fffcf7] focus:bg-[#fffcf8] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
             maxLength={1}
           />
           <input
             type="text"
             {...register("otp4")}
-            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 bg-beige border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none focus:bg-[#fffcf7] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+            className="w-14 h-14 text-center text-2xl font-extrabold text-slate-900 border-transparent hover:border-slate-200 appearance-none rounded p-4 outline-none bg-[#fffcf7] focus:bg-[#fffcf8] focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
             maxLength={1}
           />
         </div>
         <div className="max-w-[260px] mx-auto mt-4">
           <button
             type="submit"
-            className="w-full inline-flex justify-center whitespace-nowrap rounded-lg bg-maroon px-3.5 py-2.5 text-sm font-medium text-beige shadow-sm shadow-indigo-950/10 hover:bg-[#561818] focus:outline-none focus:ring focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150"
+            className="w-full inline-flex justify-center whitespace-nowrap rounded-lg hover:bg-transparent px-3.5 py-2.5 text-sm font-medium border-primary-color border-2 bg-primary-color text-secondary-color hover:text-primary-color focus:outline-none focus:ring focus:ring-indigo-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 transition-colors duration-150"
           >
             Verify Account
           </button>
@@ -297,6 +297,7 @@ export default function Signin() {
         height={10000}
         src={"/signin.jpg"}
         alt="Stock"
+        priority={true}
         className="w-[70%] h-full animate-animate-appear hidden md:block"
       />
       <div className="md:w-[30%] w-full flex flex-col relative items-center justify-center gap-10 h-[100%] bg-[#ffefd2] border-l-2 shadow-md border-[rgb(129,30,30)]">
@@ -328,13 +329,13 @@ export default function Signin() {
               <input
                 type="text"
                 {...register("email")}
-                className="md:w-[20vw] w-[80%] py-3 bg-[#fffcf7] px-4 border-[1px] border-[#ffefd2] text-sm focus:ring-0 focus:border-maroon focus:outline-none"
+                className="md:w-[20vw] w-[80%] py-3 bg-[#fffcf7] px-4 border-[1px] border-[#ffefd2] text-sm focus:ring-0 focus:border-primary-color focus:outline-none"
                 placeholder="Email..."
               />
               <Button
                 type="submit"
                 disabled={loader}
-                className="w-[80%] p-0 md:w-[20vw] bg-[#800000] text-[#ffdfa8] h-12 uppercase text-sm font-bold"
+                className="w-[80%] p-0 md:w-[20vw] bg-primary-color border-primary-color text-[#ffdfa8] hover:text-primary-color h-12 uppercase text-sm font-bold"
               >
                 {loader ? <LightSpinner color={"fill-[#900000]"} /> : "Log In"}
               </Button>

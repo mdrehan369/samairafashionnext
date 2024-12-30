@@ -1,7 +1,7 @@
 const Refund = () => {
     return (
         <div className="container w-[70%] text-sm animate-animate-appear text-black mx-auto p-4 bg-transparent dark:text-white">
-            <h1 className="text-4xl font-bold mb-4">Return, Exchange, and Refund Policy</h1>
+            <h2 className="text-4xl font-bold mb-4">Return, Exchange, and Refund Policy</h2>
 
             <p className="mb-4">
                 <strong>We have a NO Return- NO Exchange Policy,</strong> Returns and exchange are allowed only if the goods are damaged, which means you have 30 days after receiving your item to request a return. Make a video of receiving goods and opening the package for proof.
