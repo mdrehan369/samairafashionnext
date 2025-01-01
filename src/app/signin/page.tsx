@@ -277,9 +277,10 @@ export default function Signin() {
   };
 
   const handleFacebookLogin = async () => {
-
-    await initFacebookSdk()
+    console.log("function called")
+    const res = await initFacebookSdk()
     .then(async () => {
+      console.log("Facebook SDK initialized");
         await fbLogin().then((res) => {
           dispatch(login(res));
           if (localStorage.getItem("product") !== null)
@@ -288,6 +289,8 @@ export default function Signin() {
         });
       })
       .catch((err) => console.log(err));
+    
+    console.log(res)
   };
 
   return (

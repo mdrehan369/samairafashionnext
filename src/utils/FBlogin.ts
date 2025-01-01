@@ -10,16 +10,19 @@ declare global {
 export const initFacebookSdk = () => {
   return new Promise((resolve, reject) => {
     // Load the Facebook SDK asynchronously
-    window.fbAsyncInit = () => {
-      window.FB.init({
+    window.fbAsyncInit = async () => {
+      const fbinitres = await window.FB.init({
         appId: "1196352455112834",
         cookie: true,
         xfbml: true,
         version: "v16.0",
       });
+      console.log(fbinitres)
+      
       // Resolve the promise when the SDK is loaded
-      resolve(true);
     };
+    window.fbAsyncInit()
+    resolve(true)
   });
 };
 

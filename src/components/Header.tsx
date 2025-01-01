@@ -109,7 +109,7 @@ function Header() {
           >
             <FontAwesomeIcon
               icon={faBars}
-              className="size-6 absolute top-3 left-4"
+              className="size-6 absolute top-5 left-4"
             />
           </div>
 
@@ -225,7 +225,16 @@ function Header() {
             </ul>
           </div>
 
-          <Link href={"/search"} className="md:hidden absolute top-3 right-4">
+          <Image
+            alt=""
+            width={1000}
+            height={1000}
+            src={"/logo.avif"}
+            className="md:hidden w-[60%] h-fit md:mx-auto cursor-pointer"
+            onClick={() => router.push("/")}
+          />
+
+          <Link href={"/search"} className="md:hidden absolute top-5 right-4">
             <FontAwesomeIcon
               icon={faSearch}
               className="size-6 cursor-pointer text-gray-500"
